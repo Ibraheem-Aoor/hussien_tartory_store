@@ -84,7 +84,7 @@
                     <th data-breakpoints="lg">#</th>
                     <th>{{translate('Name')}}</th>
                     <th data-breakpoints="lg">{{translate('Code')}}</th>
-                    <th data-breakpoints="lg">{{translate('Flutter App Lang Code')}}</th>
+                    {{-- <th data-breakpoints="lg">{{translate('Flutter App Lang Code')}}</th> --}}
                     <th data-breakpoints="lg">{{translate('RTL')}}</th>
                     <th>{{translate('Status')}}</th>
                     <th class="text-right" width="15%">{{translate('Options')}}</th>
@@ -99,7 +99,7 @@
                         <td>{{ ($key+1) + ($languages->currentPage() - 1)*$languages->perPage() }}</td>
                         <td>{{ $language->name }}</td>
                         <td>{{ $language->code }}</td>
-                        <td>{{ $language->app_lang_code }}</td>
+                        {{-- <td>{{ $language->app_lang_code }}</td> --}}
                         <td><label class="aiz-switch aiz-switch-success mb-0">
                             <input onchange="update_rtl_status(this)" value="{{ $language->id }}" type="checkbox" @if($language->rtl == 1) checked @endif>
                             <span class="slider round"></span></label>
@@ -112,12 +112,12 @@
                             <a class="btn btn-soft-info btn-icon btn-circle btn-sm" href="{{route('languages.show', $language->id)}}" title="{{ translate('Translation') }}">
                                 <i class="las la-language"></i>
                             </a>
-                            <a class="btn btn-soft-warning btn-icon btn-circle btn-sm" href="{{route('app-translations.show', $language->id)}}" title="{{ translate('App Translation') }}">
+                            {{-- <a class="btn btn-soft-warning btn-icon btn-circle btn-sm" href="{{route('app-translations.show', $language->id)}}" title="{{ translate('App Translation') }}">
                                 <i class="las la-language"></i>
                             </a>
                             <a class="btn btn-soft-success btn-icon btn-circle btn-sm" href="{{route('app-translations.export', $language->id)}}" title="{{ translate('arb File Export') }}" download>
                                 <i class="las la-download"></i>
-                            </a>
+                            </a> --}}
                             <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{route('languages.edit', $language->id)}}" title="{{ translate('Edit') }}">
                                 <i class="las la-edit"></i>
                             </a>
@@ -173,14 +173,14 @@
                 var status = 0;
             }
             $.post('{{ route('languages.update-status') }}', {
-                    _token : '{{ csrf_token() }}', 
-                    id : el.value, 
+                    _token : '{{ csrf_token() }}',
+                    id : el.value,
                     status : status
                 }, function(data) {
                 if(data == 1) {
                     location.reload();
                 }
-                else { 
+                else {
                     AIZ.plugins.notify('danger', '{{ translate('Something went wrong') }}');
                 }
             });
