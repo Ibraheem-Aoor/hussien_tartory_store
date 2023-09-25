@@ -75,11 +75,11 @@
                                 </li>
                             @endcan
                             @can('show_all_products')
-                                {{-- <li class="aiz-side-nav-item">
+                                <li class="aiz-side-nav-item">
                                     <a href="{{route('products.all')}}" class="aiz-side-nav-link">
                                         <span class="aiz-side-nav-text">{{ translate('All Products') }}</span>
                                     </a>
-                                </li> --}}
+                                </li>
                             @endcan
                             @can('show_in_house_products')
                                 {{-- <li class="aiz-side-nav-item">
