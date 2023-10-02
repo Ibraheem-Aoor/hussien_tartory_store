@@ -53,9 +53,9 @@
                         @if (get_setting('show_currency_switcher') == 'on')
                             <li class="list-inline-item dropdown ml-auto ml-lg-0 mr-0" id="currency-change">
                                 @php
-                                    
+
                                     $system_currency = get_system_currency();
-                                    
+
                                 @endphp
                                 <a href="javascript:void(0)" class="dropdown-toggle text-secondary fs-12 py-2"
                                     data-toggle="dropdown" data-display="static">
@@ -137,7 +137,7 @@
                                     class="mw-100 h-30px h-md-40px" height="40">
                             @else
                                 <img src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}"
-                                    class="mw-100 h-30px h-md-40px" height="40">
+                                    class="mw-100 h-100px h-md-100px" height="100">
                             @endif
                         </a>
                     </div>
