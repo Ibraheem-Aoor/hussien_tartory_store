@@ -10,9 +10,9 @@
                     <div class="card-body">
                         <div class="mb-5 text-center">
                             @if(get_setting('system_logo_black') != null)
-                                <img src="{{ uploaded_asset(get_setting('system_logo_black')) }}" class="mw-100 mb-4" height="40">
+                                <img src="{{ uploaded_asset(get_setting('system_logo_black')) }}" class="mw-100 mb-4" height="80">
                             @else
-                                <img src="{{ static_asset('assets/img/logo.png') }}" class="mw-100 mb-4" height="40">
+                                <img src="{{ static_asset('assets/img/logo.png') }}" class="mw-100 mb-4" height="80">
                             @endif
                             <h1 class="h3 text-primary mb-0">{{ translate('Welcome to') }} {{ env('APP_NAME') }}</h1>
                             <p>{{ translate('Login to your account.') }}</p>
