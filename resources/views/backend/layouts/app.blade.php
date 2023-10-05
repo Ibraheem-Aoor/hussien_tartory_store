@@ -29,9 +29,16 @@
     @endif
     <link rel="stylesheet" href="{{ static_asset('assets/css/aiz-core.css?v=') }}{{ rand(1000,9999) }}">
 
+
     <style>
         body {
             font-size: 12px;
+        }
+        .aiz-side-nav-logo-wrap
+        {
+            background: none !important;
+            padding: 0px 0px;
+
         }
     </style>
     <script>
